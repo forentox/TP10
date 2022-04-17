@@ -1,0 +1,695 @@
+<!DOCTYPE html>
+<html lang="es-ar">
+
+<head>
+
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Instrumentos Analíticos S.A.</title>
+  <!-- Fontawasome -->
+  <script src="https://kit.fontawesome.com/13d49d6d93.js" crossorigin="anonymous"></script> <!-- Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <!-- Menu  -->
+
+  <!-- Google Fonts-->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Coda&family=Orbitron:wght@600&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="css/style.css">
+
+  <!-- Comienza Chem Viewer -->
+
+  <link rel="stylesheet" type="text/css" href="libs/kekule/themes/default/kekule.css" />
+
+<style>
+.chem
+    {
+      display: flex;
+      flex-direction: column;
+      width: 600px;
+      justify-content: center; 
+      align-items: center;
+
+    }
+
+  .chem  p
+    {
+      margin: 0.3em 0.5em;
+    }
+
+    .chem fieldset
+    {
+      border: 0.15vw solid #1abc9c;
+      border-radius: 1vw;
+      text-align: left;
+       
+    }
+
+    #chemViewer, #codeViewer
+    {
+      height: 350px;
+      border: 0.15vw solid #1abc9c;
+      border-radius: 1vw;
+      /* float: left; */
+    }
+    #chemViewer
+    {
+      width: 550px;
+    }
+    /* #codeViewer
+    {
+      width: 450px;
+      font-family: "Courier New", Courier, monospace;
+      white-space: pre;
+    } */
+    .FloatClearer
+    {
+      clear: both;
+    }
+    #setter
+    {
+      max-width: 1000px;
+    }
+
+    #panelToolButtons
+    {
+      overflow: hidden;
+    }
+    .ToolButtonSetter
+    {
+      width: 12em;
+    }
+  </style>
+
+  <script id="initialMol" type="chemical/x-kekule-json">
+    {"id":"m1","info":{"generator":"Kekule","date":{"__type__":"date","date":"Sat, 07 Feb 2015 04:26:58 GMT"},"__type__":"object"},"renderOptions":{"expanded":true,"__type__":"object"},"coord2D":{"x":2.474317998547942,"y":1.5324413286544782,"__type__":"object"},"charge":0,"parity":null,"ctab":{"nodes":[{"__type__":"Kekule.Atom","id":"a1","coord2D":{"x":9.1791,"y":35.1338,"__type__":"object"},"charge":0,"parity":null,"isotopeId":"C"},{"__type__":"Kekule.Atom","id":"a2","coord2D":{"x":9.8719,"y":34.7338,"__type__":"object"},"charge":0,"parity":null,"isotopeId":"C"},{"__type__":"Kekule.Atom","id":"a3","coord2D":{"x":9.1791,"y":35.9338,"__type__":"object"},"charge":0,"parity":null,"isotopeId":"C"},{"__type__":"Kekule.Atom","id":"a4","coord2D":{"x":8.4863,"y":34.7338,"__type__":"object"},"charge":0,"parity":null,"isotopeId":"C"},{"__type__":"Kekule.Atom","id":"a5","coord2D":{"x":9.8719,"y":33.9338,"__type__":"object"},"charge":0,"parity":null,"isotopeId":"C"},{"__type__":"Kekule.Atom","id":"a6","coord2D":{"x":8.4863,"y":36.3338,"__type__":"object"},"charge":0,"parity":null,"isotopeId":"C"},{"__type__":"Kekule.Atom","id":"a7","coord2D":{"x":8.4863,"y":33.9338,"__type__":"object"},"charge":0,"parity":null,"isotopeId":"C"},{"__type__":"Kekule.Atom","id":"a8","coord2D":{"x":9.1791,"y":33.5338,"__type__":"object"},"charge":0,"parity":null,"isotopeId":"C"},{"__type__":"Kekule.Atom","id":"a9","coord2D":{"x":10.5648,"y":33.5338,"__type__":"object"},"charge":0,"parity":null,"isotopeId":"C"},{"__type__":"Kekule.Atom","id":"a11","coord2D":{"x":7.7935,"y":35.9338,"__type__":"object"},"charge":0,"parity":null,"isotopeId":"O"},{"__type__":"Kekule.Atom","id":"a10","coord2D":{"x":8.4863,"y":37.1338,"__type__":"object"},"charge":0,"parity":null,"isotopeId":"O"},{"__type__":"Kekule.Atom","id":"a12","coord2D":{"x":11.2576,"y":33.9338,"__type__":"object"},"charge":0,"parity":null,"isotopeId":"C"}],"anchorNodes":[],"connectors":[{"__type__":"Kekule.Bond","id":"b1","parity":null,"bondType":"covalent","bondOrder":1,"electronCount":3,"isInAromaticRing":true,"connectedNodes":[0,1]},{"__type__":"Kekule.Bond","id":"b2","parity":null,"bondType":"covalent","bondOrder":1,"electronCount":2,"isInAromaticRing":false,"connectedNodes":[0,2]},{"__type__":"Kekule.Bond","id":"b3","parity":null,"bondType":"covalent","bondOrder":2,"electronCount":3,"isInAromaticRing":true,"connectedNodes":[0,3]},{"__type__":"Kekule.Bond","id":"b4","parity":null,"bondType":"covalent","bondOrder":2,"electronCount":3,"isInAromaticRing":true,"connectedNodes":[1,4]},{"__type__":"Kekule.Bond","id":"b5","parity":null,"bondType":"covalent","bondOrder":1,"electronCount":2,"isInAromaticRing":false,"connectedNodes":[2,5]},{"__type__":"Kekule.Bond","id":"b6","parity":null,"bondType":"covalent","bondOrder":1,"electronCount":3,"isInAromaticRing":true,"connectedNodes":[3,6]},{"__type__":"Kekule.Bond","id":"b7","parity":null,"bondType":"covalent","bondOrder":1,"electronCount":3,"isInAromaticRing":true,"connectedNodes":[4,7]},{"__type__":"Kekule.Bond","id":"b8","parity":null,"bondType":"covalent","bondOrder":1,"electronCount":2,"isInAromaticRing":false,"connectedNodes":[4,8]},{"__type__":"Kekule.Bond","id":"b10","parity":null,"bondType":"covalent","bondOrder":1,"electronCount":2,"isInAromaticRing":false,"connectedNodes":[5,9]},{"__type__":"Kekule.Bond","id":"b9","bondType":"covalent","bondOrder":2,"electronCount":4,"isInAromaticRing":false,"connectedNodes":[5,10]},{"__type__":"Kekule.Bond","id":"b11","parity":null,"bondType":"covalent","bondOrder":2,"electronCount":3,"isInAromaticRing":true,"connectedNodes":[6,7]},{"__type__":"Kekule.Bond","id":"b12","bondType":"covalent","bondOrder":2,"electronCount":4,"isInAromaticRing":false,"connectedNodes":[8,11]}],"__type__":"Kekule.StructureConnectionTable"},"__type__":"Kekule.Molecule"}
+  </script>
+
+  <script src="libs/raphael-min.2.0.1.js"></script>
+  <script src="libs/Three.js"></script>
+
+  <script src="libs/kekule/kekule.js?modules=io,chemWidget"></script>
+  <!--
+  <script src="../../../../src/kekule.js?min=false&modules=io,chemWidget"></script>
+  -->
+
+  <script>
+    function getCurrMol()
+    {
+      return getChemViewer().getChemObj();
+    }
+    function getChemViewer()
+    {
+      return Kekule.Widget.getWidgetById('chemViewer');
+    }
+    function getCodeViewer()
+    {
+      return Kekule.Widget.getWidgetById('codeViewer');
+    }
+    function showCode(code)
+    {
+      getCodeViewer().setValue(code);
+    }
+    function getFuncCode(func)
+    {
+      return func.toString();
+    }
+    function runOperation(funcName)
+    {
+      var func = this[funcName];
+      func();
+      // show function code in text area
+      var code = func.toString();
+      showCode(code);
+    }
+
+    function loadFromFile()
+    {
+      // get local file object
+      var file = document.getElementById('inputFile').files[0];
+      if (file)
+      {
+        // load file and parse to chem object
+        Kekule.IO.loadFileData(file, function(chemObj, success)
+        {
+          // load chem object into chem viewer
+          if (success && chemObj)
+            getChemViewer().setChemObj(chemObj);
+        });
+      }
+    }
+    function dumpObject()
+    {
+      // Get current object in viewer
+      var obj = getChemViewer().getChemObj();
+      // Save the object into CML
+      var cmlData = Kekule.IO.saveFormatData(obj, 'cml');
+      // Show object data
+      var msg = 'Object type: ' + obj.getClassName() + '\n';
+      msg += cmlData;
+      console.log(msg);
+      alert(msg);
+    }
+    function editObject()
+    {
+      var chemViewer = getChemViewer();
+      // Can only edit in 2D mode
+      if (chemViewer.getRenderType() !== Kekule.Render.RendererType.R2D)
+        alert('Now only support editing of 2D objects')
+      else
+      {
+        chemViewer.setEnableEdit(true);
+        chemViewer.openEditor();
+      }
+    }
+    function changeRenderType()
+    {
+      var chemViewer = getChemViewer();
+      var newType = document.getElementById('selectRenderType').value;
+      if (newType === '3D')
+        chemViewer.setRenderType(Kekule.Render.RendererType.R3D);
+      else
+        chemViewer.setRenderType(Kekule.Render.RendererType.R2D);
+    }
+    function zoomToRatio()
+    {
+      var ratio = document.getElementById('selectZoomRatio').value;
+      getChemViewer().setZoom(ratio);
+    }
+    function changeMol2DDisplayType()
+    {
+      var disType = document.getElementById('selectMol2DDisplayType').value;
+      getChemViewer().setMoleculeDisplayType(Kekule.Render.Molecule2DDisplayType[disType.toUpperCase()]);
+    }
+    function changeMol3DDisplayType()
+    {
+      var disType = document.getElementById('selectMol3DDisplayType').value;
+      getChemViewer().setMoleculeDisplayType(Kekule.Render.Molecule3DDisplayType[disType.toUpperCase()]);
+    }
+    function changeAutofit()
+    {
+      var autofit = document.getElementById('checkBoxAutofit').checked;
+      getChemViewer().setAutofit(autofit);
+    }
+    function changeRenderColor()
+    {
+	    var chemViewer = getChemViewer();
+	    var atomColor = Kekule.Widget.getWidgetById('selectAtomColor').getValue() || null;
+	    var bondColor = Kekule.Widget.getWidgetById('selectBondColor').getValue() || null;
+	    var useAtomSpecifiedColor = document.getElementById('checkBoxSpecifiedColor').checked;
+
+	    if (chemViewer.getRenderType() === Kekule.Render.RendererType.R3D) // 3D viewer
+      {
+      	var configs = chemViewer.getRenderConfigs().getMoleculeDisplayConfigs();
+      	configs.setUseAtomSpecifiedColor(useAtomSpecifiedColor);
+	      configs.setDefAtomColor(atomColor || '#000099');
+	      configs.setDefBondColor(bondColor || '#FFFFFF');
+      }
+	    else  // 2D viewer
+      {
+	      var configs = chemViewer.getRenderConfigs().getColorConfigs();
+	      configs.setUseAtomSpecifiedColor(useAtomSpecifiedColor);
+	      configs.setAtomColor(atomColor || '#000000');
+	      configs.setBondColor(bondColor || '#000000');
+      }
+	    chemViewer.repaint();
+    }
+    function changeDirectInteraction()
+    {
+      var enabled = document.getElementById('checkBoxDirectInteraction').checked;
+      getChemViewer().setEnableDirectInteraction(enabled);
+    }
+    
+    function rotate2D()
+    {
+      var delta = 5 * Math.PI / 180;
+      getChemViewer().rotate2DBy(delta);
+    }
+    function rotateX()
+    {
+      var delta = 5 * Math.PI / 180;
+      getChemViewer().rotate3DBy(delta, 0, 0);
+    }
+    function rotateY()
+    {
+      var delta = 5 * Math.PI / 180;
+      getChemViewer().rotate3DBy(0, delta, 0);
+    }
+    function rotateZ()
+    {
+      var delta = 5 * Math.PI / 180;
+      getChemViewer().rotate3DBy(0, 0, delta);
+    }
+
+    function changeEnableToolbar()
+    {
+      var enabled = document.getElementById('checkBoxEnableToolbar').checked;
+      getChemViewer().setEnableToolbar(enabled);
+    }
+    function changeToolbarEvokeMode()
+    {
+      var chemViewer = getChemViewer();
+      var mode = document.getElementById('selectToolbarEvokeMode').value;
+      if (mode === 'always')
+      {
+        chemViewer.setToolbarEvokeModes([Kekule.Widget.EvokeMode.ALWAYS]);
+        chemViewer.setToolbarRevokeModes([]);
+      }
+      else if (mode === 'click')
+      {
+        chemViewer.setToolbarEvokeModes([Kekule.Widget.EvokeMode.EVOKEE_CLICK]);
+        chemViewer.setToolbarRevokeModes([Kekule.Widget.EvokeMode.EVOKEE_MOUSE_LEAVE]);
+      }
+      else if (mode === 'mouseenter')
+      {
+        chemViewer.setToolbarEvokeModes([Kekule.Widget.EvokeMode.EVOKEE_MOUSE_ENTER]);
+        chemViewer.setToolbarRevokeModes([Kekule.Widget.EvokeMode.EVOKEE_MOUSE_LEAVE]);
+      }
+    }
+    function changeToolbarPos()
+    {
+      var chemViewer = getChemViewer();
+      var pos = document.getElementById('selectToolbarPos').value;
+      var posValue;
+      switch (pos)
+      {
+        case 'left': posValue = Kekule.Widget.Position.LEFT; break;
+        case 'right': posValue = Kekule.Widget.Position.RIGHT; break;
+        case 'top': posValue = Kekule.Widget.Position.TOP; break;
+        case 'bottom': posValue = Kekule.Widget.Position.BOTTOM; break;
+        case 'top-left': posValue = Kekule.Widget.Position.TOP_LEFT; break;
+        case 'top-right': posValue = Kekule.Widget.Position.TOP_RIGHT; break;
+        case 'bottom-left': posValue = Kekule.Widget.Position.BOTTOM_LEFT; break;
+        case 'bottom-right': posValue = Kekule.Widget.Position.BOTTOM_RIGHT; break;
+        default: posValue = Kekule.Widget.Position.AUTO;
+      }
+      chemViewer.setToolbarPos(posValue);
+    }
+
+    var toolBtns = [
+      'loadData', 'saveData', 'clearObjs', 'molDisplayType', 'zoomIn', 'zoomOut',
+      'rotateLeft', 'rotateRight', 'rotateX', 'rotateY', 'rotateZ',
+      'reset', 'molHideHydrogens', 'openEditor', 'config', 'custom'
+    ];
+    var toolBtnSetCheckBoxes = [];
+
+    function changeToolButtons()
+    {
+      var btns = [];
+      // gather buttons
+      for (var i = 0, l = toolBtnSetCheckBoxes.length; i < l; ++i)
+      {
+        var checkBox = toolBtnSetCheckBoxes[i];
+        if (checkBox.getChecked())
+          btns.push(checkBox._value || checkBox.getValue());
+      }
+      // set tool buttons of chem viewer
+      getChemViewer().setToolButtons(btns);
+    }
+    function initToolButtonSetter()
+    {
+      var chemViewer = getChemViewer();
+      var btns = toolBtns;
+      var currBtns = chemViewer.getToolButtons() || chemViewer.getDefaultToolBarButtons();
+      var parentElem = document.getElementById('panelToolButtons');
+      for (var i = 0, l = btns.length; i < l; ++i)
+      {
+        var btnName = btns[i];
+        // create check box widget
+        var checkBox = new Kekule.Widget.CheckBox(document);
+        checkBox.addClassName('ToolButtonSetter');
+        checkBox.setText(btnName);
+        checkBox.setValue(btnName);
+        if (btnName === 'custom')  // custom button
+          checkBox._value = {'text': 'Custom', 'htmlClass': 'K-Res-Button-YesOk', 'showText': true, '#execute': function(){ alert('Custom button'); } };
+        else  // default button
+          checkBox._value = btnName;
+        if (currBtns.indexOf(btnName) >= 0)
+          checkBox.setChecked(true);
+        checkBox.appendToElem(parentElem);
+        toolBtnSetCheckBoxes.push(checkBox);
+      }
+    }
+
+    function changePredefinedSetting()
+    {
+      var chemViewer = getChemViewer();
+      var preset = document.getElementById('selectPreset').value;
+      chemViewer.setPredefinedSetting(preset);
+    }
+
+    function init()
+    {
+      document.getElementById('inputFile').addEventListener('change', function()
+      {
+        runOperation('loadFromFile');
+      });
+      document.getElementById('selectRenderType').addEventListener('change', function()
+      {
+        runOperation('changeRenderType');
+      });
+      document.getElementById('checkBoxAutofit').addEventListener('change', function()
+      {
+        runOperation('changeAutofit');
+      });
+	    document.getElementById('checkBoxSpecifiedColor').addEventListener('change', function()
+	    {
+		    runOperation('changeRenderColor');
+	    });
+      document.getElementById('checkBoxDirectInteraction').addEventListener('change', function()
+      {
+        runOperation('changeDirectInteraction');
+      });
+      document.getElementById('checkBoxDirectInteraction').checked = getChemViewer().getEnableDirectInteraction();
+      document.getElementById('checkBoxEnableToolbar').addEventListener('change', function()
+      {
+        runOperation('changeEnableToolbar');
+      });
+      document.getElementById('checkBoxEnableToolbar').checked = getChemViewer().getEnableToolbar();
+
+      var zoomRatios = Kekule.ZoomUtils.PREDEFINED_ZOOM_RATIOS;
+      var zoomItems = [];
+      for (var i = 0, l = zoomRatios.length; i < l; ++i)
+      {
+        var zoom = zoomRatios[i];
+        zoomItems.push({'text': Math.round(zoom * 100) + '%', 'value': zoom});
+      }
+      Kekule.Widget.getWidgetById('selectZoomRatio')
+        .setItems(zoomItems).setValue(getChemViewer().getZoom() || 1)
+        .on('valueChange', function(){
+          runOperation('zoomToRatio');
+        });
+
+      var mol2DDisplayTypes = ['skeletal', 'condensed'];
+      var mol3DDisplayTypes = ['wire', 'sticks', 'ball_stick', 'space_fill'];
+      var disTypeItems = [];
+      for (var i = 0, l = mol2DDisplayTypes.length; i < l; ++i)
+      {
+        disTypeItems.push({'value': mol2DDisplayTypes[i]});
+      }
+      Kekule.Widget.getWidgetById('selectMol2DDisplayType')
+        .setItems(disTypeItems)
+        .on('valueChange', function(){
+          runOperation('changeMol2DDisplayType');
+        });
+      var disTypeItems = [];
+      for (var i = 0, l = mol3DDisplayTypes.length; i < l; ++i)
+      {
+        disTypeItems.push({'value': mol3DDisplayTypes[i]});
+      }
+      Kekule.Widget.getWidgetById('selectMol3DDisplayType')
+        .setItems(disTypeItems)
+        .on('valueChange', function(){
+          runOperation('changeMol3DDisplayType');
+        });
+
+	    Kekule.Widget.getWidgetById('selectBondColor').on('valueChange', function(){
+		    runOperation('changeRenderColor');
+	    });
+	    Kekule.Widget.getWidgetById('selectAtomColor').on('valueChange', function(){
+		    runOperation('changeRenderColor');
+	    });
+
+      Kekule.Widget.getWidgetById('btnRotate2D').on('execute', function(){
+        runOperation('rotate2D');
+      });
+      Kekule.Widget.getWidgetById('btnRotateX').on('execute', function(){
+        runOperation('rotateX');
+      });
+      Kekule.Widget.getWidgetById('btnRotateY').on('execute', function(){
+        runOperation('rotateY');
+      });
+      Kekule.Widget.getWidgetById('btnRotateZ').on('execute', function(){
+        runOperation('rotateZ');
+      });
+
+     
+      var evokeModes = ['always', 'click', 'mouseenter'];
+      var evokeItems = [];
+      for (var i = 0, l = evokeModes.length; i < l; ++i)
+        evokeItems.push({'value': evokeModes[i]});
+      Kekule.Widget.getWidgetById('selectToolbarEvokeMode')
+        .setItems(evokeItems).setValue('mouseenter')
+        .on('valueChange', function(){
+          runOperation('changeToolbarEvokeMode');
+        });
+      changeToolbarEvokeMode();
+
+      var toolbarPoses = ['top', 'left', 'right', 'bottom', 'top-left', 'top-right', 'bottom-left', 'bottom-right'];
+      var toolbarPosItems = [];
+      for (var i = 0, l = toolbarPoses.length; i < l; ++i)
+        toolbarPosItems.push({'value': toolbarPoses[i]});
+      Kekule.Widget.getWidgetById('selectToolbarPos')
+        .setItems(toolbarPosItems).setValue('bottom-right')
+        .on('valueChange', function(){
+          runOperation('changeToolbarPos');
+        });
+      changeToolbarPos();
+
+      initToolButtonSetter();
+      Kekule.Widget.getWidgetById('btnSetToolButtons').on('execute', function(){
+        runOperation('changeToolButtons');
+      });
+
+      var presets = ['', 'fullFunc', 'basic', 'static', 'editOnly'];
+      var presetItems = [];
+      for (var i = 0, l = presets.length; i < l; ++i)
+      {
+        presetItems.push({'value': presets[i]});
+      }
+      Kekule.Widget.getWidgetById('selectPreset')
+        .setItems(presetItems).setValue('')
+        .on('valueChange', function(){
+          runOperation('changePredefinedSetting');
+        });
+    }
+    Kekule.X.domReady(init);
+  </script>
+
+  <!-- Finaliza Chem Viewer -->
+
+</head>
+
+<body>
+  <header>
+    <div class="header">
+      <h1 id=encabezado>Instrumentos Analíticos S.A.</h1>
+    </div>
+    <img src="img/logo.png" id="logo" width="100" height="100" alt="" style="position: absolute; top: 0; left: 0;  z-index: 1;">
+  </header>
+
+  <nav>
+    <div class="topnav" id="myTopnav">
+      <a href="index.html" >Inicio</a>
+      <a href="empresas.html">Empresas Representadas</a>
+      <a href="formulario.html">Contactenos</a>
+      <a href="oficinas.html">Donde Estamos</a>
+
+      <div class="dropdown active ">        <!--   ahqy que agregar la clase active para que se active  la parte superior del menu que tiene dropdown -->
+        <button class="dropbtn">Utilidades
+          <i class="fa-solid fa-caret-down"></i> <!--   Este es de mu cuenta de awasome -->
+        </button>
+        <div class="dropdown-content">
+          <a href="estruc_quimicas.html" class="active" >Estructuras</a>
+          <a href="tabla_periodica.html">Tabla Periodica</a>
+          <a href="sim.html">SI Prefijos</a>
+        </div>
+      </div>
+
+
+      <a href="javascript:void(0);" style="font-size:15px;" class="icon" onclick="myFunction()">&#9776;</a>
+    </div>
+  </nav>
+
+  <!-- The flexible grid (content) -->
+
+  <div class="row">
+    <main id=centrar-menos>
+      <h2>Editor de Estructuras Químicas</h2>
+        <div class="chem" >
+    
+  <!-- Comienza Chem Viewer -->
+
+<br>
+
+<div id="stage">
+  <div id="chemViewer" data-widget="Kekule.ChemWidget.Viewer"
+       data-chem-obj="url(#initialMol)" data-enable-edit="true" data-enable-toolbar="true"></div>
+<!--   <textarea class="Output" id="codeViewer"  data-widget="Kekule.Widget.TextArea"></textarea>  -->   <!-- Aca hay un error   readonly="true"-->
+  <div class="FloatClearer"></div>
+  <br>
+</div>
+
+<div id="setter">
+  <input id="inputFile" type="file" style="display: none" />
+  <div id="operButtons" data-widget="Kekule.Widget.ButtonGroup">
+    <label for="inputFile" data-widget="Kekule.Widget.Button">Abrir Objecto</label>
+        <!-- <button onclick="runOperation('dumpObject')" data-widget="Kekule.Widget.Button">Retrieve Object</button> -->
+    <button onclick="runOperation('editObject')" data-widget="Kekule.Widget.Button">Editar Objecto</button>
+    <button id="btnRotate2D" data-widget="Kekule.Widget.Button" data-enable-periodical-exec="true">Rotar 2D</button>
+    <button id="btnRotateX" data-widget="Kekule.Widget.Button" data-enable-periodical-exec="true">Rotar 3D X</button>
+    <button id="btnRotateY" data-widget="Kekule.Widget.Button" data-enable-periodical-exec="true">Rotar 3D Y</button>
+    <button id="btnRotateZ" data-widget="Kekule.Widget.Button" data-enable-periodical-exec="true">Rotar 3D Z</button>
+  </div>
+<br><br>
+  <fieldset>
+    <legend>Opciones</legend>
+    <p>
+      <label for="selectRenderType">
+        Modo:
+        <select id="selectRenderType" data-widget="Kekule.Widget.SelectBox" data-items='[{"value": "2D"}, {"value": "3D"}]'></select>
+      </label>
+      &nbsp;&nbsp;&nbsp;
+      <label for="selectMol2DDisplayType">
+        Mostrar la molécula en 2D:
+        <select id="selectMol2DDisplayType" data-widget="Kekule.Widget.SelectBox"></select>
+      </label>
+      &nbsp;&nbsp;&nbsp;
+      <label for="selectMol3DDisplayType">
+        3D:
+        <select id="selectMol3DDisplayType" data-widget="Kekule.Widget.SelectBox"></select>
+      </label>
+      <label hidden>
+        <input type="checkbox" id="checkBoxAutofit" />
+        Autofit (in 2D mode only)
+      </label>
+    </p>
+
+    <br>
+
+    <p>
+      <label>
+        <input type="checkbox" id="checkBoxDirectInteraction" />
+        Activar la interacción directa&nbsp;&nbsp;
+      </label>
+      <label for="selectZoomRatio">
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+        Zoom:
+        <select id="selectZoomRatio" data-widget="Kekule.Widget.SelectBox"></select>
+      </label>
+      </p>
+      <br>
+
+      <p>
+      <label for="checkBoxSpecifiedColor">
+        <input id="checkBoxSpecifiedColor" type="checkbox">                          <!-- Aca hay un error </input>   --> 
+        Usar colores de átomos predefinidos
+      </label>
+    </p>
+    <br>
+    <p>
+        Utilice las opciones para cambiar el modo de visualización
+    </p> 
+        
+  </fieldset>
+
+  <fieldset hidden>
+    <legend>Default Render Colors</legend>
+    <p>
+      <label for="selectBondColor">
+        Bond color:
+        <button id="selectBondColor" data-widget="Kekule.Widget.ColorDropButton"></button>
+      </label>
+      <label for="selectAtomColor">
+        Atom color:
+        <button id="selectAtomColor" data-widget="Kekule.Widget.ColorDropButton"></button>
+      </label>
+      <!-- <label for="checkBoxSpecifiedColor">
+        <input id="checkBoxSpecifiedColor" type="checkbox">           
+        Use atom specified color
+      </label> -->
+    </p>
+  </fieldset>
+
+  <fieldset hidden >
+    <legend>Toolbar</legend>
+    <p>
+      <label>
+        <input type="checkbox" id="checkBoxEnableToolbar" />
+        Enable toolbar&nbsp;&nbsp;
+      </label>
+      <label for="selectToolbarEvokeMode">
+        Show toolbar when:
+        <select id="selectToolbarEvokeMode" data-widget="Kekule.Widget.SelectBox"></select>
+      </label>
+      <label for="selectToolbarPos">
+        Toolbar position:
+        <select id="selectToolbarPos" data-widget="Kekule.Widget.SelectBox"></select>
+      </label>
+    </p>
+  </fieldset>
+
+  <fieldset hidden >
+    <legend>Tool Buttons</legend>
+   
+      <div id="panelToolButtons"></div>
+                                                                                                            
+    <button id="btnSetToolButtons" data-widget="Kekule.Widget.Button">Apply</button>
+  </fieldset>
+
+  <fieldset hidden >
+    <legend>Predefined-Settings</legend>
+    <label>
+    
+        <select id="selectPreset" data-widget="Kekule.Widget.SelectBox"></select>
+    
+    </label>
+  </fieldset>
+</div>
+  <!-- Finaliza Chem Viewer -->
+
+</div>
+    
+   </main>  
+  
+      <aside>
+        <!-- <h2>Twitter de la Empresa</h2> -->
+        <a class="twitter-timeline" data-width="300" data-height="800" data-theme="light" href="https://twitter.com/LANACION?ref_src=twsrc%5Etfw">Tweets by LANACION</a> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+      </aside>
+
+  </div>
+
+  <footer>
+    <div class="footer">
+      <div class="footer-content">
+        <div class="left-box">
+          <h3 style="color: coral;">Instrumentos Analíticos S.A.</h3>
+          <p><a href="tel:113"><i class="fas fa-phone-volume"></i>&nbsp;&nbsp;+54 9 11 999 9999 </a></p>
+          <p><a href="mailto:info@instrumentoanaliticos.com.ar" ><i class="fas fa-envelope"></i>&nbsp;&nbsp;info@instrumentoanaliticos.com.ar</a></p>
+        </div>
+
+        <div class="right-box">
+          <p>Siguenos en Nuestras Redes Sociales</p>
+          <div class="media-icons">
+            <a href="#"><i class="fab fa-facebook-f"></i></a>
+            <a href="#"><i class="fab fa-instagram"></i></a>
+            <a href="#"><i class="fab fa-twitter"></i></a>
+            <a href="#"><i class="fab fa-youtube"></i></a>
+            <a href="#"><i class="fab fa-linkedin-in"></i></a>
+          </div>
+        </div>
+      </div>
+      <div class="bottom">
+        <p style="font-size: 0.75em;"> Copyright &#169; 2022 Todos los Derechos Reservados</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Este scriot es del menu -->
+  <script>
+    function myFunction() {
+      var x = document.getElementById("myTopnav");
+      if (x.className === "topnav") {
+        x.className += " responsive";
+      } else {
+        x.className = "topnav";
+      }
+    }
+  </script>
+</body>
+
+</html>
